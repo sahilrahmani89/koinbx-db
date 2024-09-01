@@ -19,9 +19,7 @@ import {
   getExpandedRowModel,
 } from "@tanstack/react-table";
 import { rankItem } from "@tanstack/match-sorter-utils";
-// import Image from "next/image";
-// import MoveToolIcon from '@/app/assets/icons/common/move_up_down.svg'
-// import { useVirtualizer } from '@tanstack/react-virtual'
+
 
 interface TableProps {
     data: any[];
@@ -57,13 +55,11 @@ export const KoinbxTable = forwardRef((props: TableProps, ref?) => {
    const {
         data: tableData,
         columns: tableColumns,
-        // title,
+        title,
         searchable = true,
-        // searchPlaceholder = "Search",
         isLoading = false,
         pageSize = 10,
-        // overlayConfig,
-        // onOverlayClick,
+     
         setTableData,
         draggableRows = false,
         isScroll = false,
@@ -147,18 +143,7 @@ export const KoinbxTable = forwardRef((props: TableProps, ref?) => {
   const { rows } = table.getRowModel();
   const tableContainerRef = React.useRef<HTMLDivElement>(null)
 
-//   const rowVirtualizer = useVirtualizer({
-//     count: rows.length,
-//     estimateSize: () => 33, //estimate row height for accurate scrollbar dragging
-//     getScrollElement: () => tableContainerRef.current,
-//     //measure dynamic row height, except in firefox because it measures table border height incorrectly
-//     measureElement:
-//       typeof window !== 'undefined' &&
-//       navigator.userAgent.indexOf('Firefox') === -1
-//         ? element => element?.getBoundingClientRect().height
-//         : undefined,
-//     overscan: 5,
-//   });
+
 
   
 
